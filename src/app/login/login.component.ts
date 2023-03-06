@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 //accno=""
-  accno:any
-  pass:any
+  
     // string interpolation
   data="Your Perfect Banking Partner"
     // property binding[property_name]="data1"
@@ -22,10 +21,44 @@ userData:any={
 }
 // methods
 // Event binding(eventname)="method()"
-login(){
+// login(){
+//   // alert('login worked')
+//   var acnum=this.accno
+//   var psw=this.pass
+//   var userData=this.userData
+//   if(acnum in userData){
+//     if(psw==userData[acnum]["password"]){
+//       alert("login success")
+
+//     }
+//     else{
+//       alert('incorrect password')
+//     }
+
+//   }
+//   else{
+//     alert('inncorect accnum')
+//   }
+// }
+// $event binding(ebventname)="method($event:type)"
+// acnoChange(event:any){
+// this.accno=event.target.value;
+  
+
+// }
+// passWord(event:any){
+// this.pass=event.target.value;
+// console.log(this.pass);
+
+// }
+
+
+// }
+login(accno:any,psw:any){
   // alert('login worked')
-  var acnum=this.accno
-  var psw=this.pass
+
+  var acnum=accno.value
+  var psw=psw.value
   var userData=this.userData
   if(acnum in userData){
     if(psw==userData[acnum]["password"]){
@@ -41,17 +74,5 @@ login(){
     alert('inncorect accnum')
   }
 }
-// $event binding(ebventname)="method($event:type)"
-acnoChange(event:any){
-this.accno=event.target.value;
-  
-
-}
-passWord(event:any){
-this.pass=event.target.value;
-console.log(this.pass);
-
-}
-
 
 }
