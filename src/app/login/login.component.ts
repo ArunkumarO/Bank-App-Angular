@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 //accno=""
+accno:any
+psw:any
   
     // string interpolation
   data="Your Perfect Banking Partner"
@@ -19,51 +22,20 @@ userData:any={
   1004:{username:"adarsh",acnno:1000,password:"abc123",balance:0},
 
 }
-// methods
-// Event binding(eventname)="method()"
-// login(){
-//   // alert('login worked')
-//   var acnum=this.accno
-//   var psw=this.pass
-//   var userData=this.userData
-//   if(acnum in userData){
-//     if(psw==userData[acnum]["password"]){
-//       alert("login success")
-
-//     }
-//     else{
-//       alert('incorrect password')
-//     }
-
-//   }
-//   else{
-//     alert('inncorect accnum')
-//   }
-// }
-// $event binding(ebventname)="method($event:type)"
-// acnoChange(event:any){
-// this.accno=event.target.value;
-  
-
-// }
-// passWord(event:any){
-// this.pass=event.target.value;
-// console.log(this.pass);
-
-// }
+constructor(private router:Router){}
 
 
-// }
-login(accno:any,psw:any){
+login(){
   // alert('login worked')
-
-  var acnum=accno.value
-  var psw=psw.value
+  var acnum=this.accno
+  var psw=this.psw
   var userData=this.userData
   if(acnum in userData){
     if(psw==userData[acnum]["password"]){
       alert("login success")
-
+      //redirection
+    
+    this.router.navigateByUrl("dashboard")
     }
     else{
       alert('incorrect password')
@@ -73,6 +45,7 @@ login(accno:any,psw:any){
   else{
     alert('inncorect accnum')
   }
-}
 
 }
+}
+
