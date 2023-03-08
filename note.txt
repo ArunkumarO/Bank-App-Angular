@@ -93,4 +93,13 @@ Data Binding In Angular
 
     access specifyer =private and public
     private --only in that class
-    public --can use thr injected class in other classes of the fil\    e
+    public --can use thr injected class in other classes of the file
+
+
+
+    Angular Service file 
+
+    ----- its a file in angular all components can access the content of service file 
+
+    --creating service file --
+      -----> ng g s filename

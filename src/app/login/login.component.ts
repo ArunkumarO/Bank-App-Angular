@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -22,14 +23,14 @@ userData:any={
   1004:{username:"adarsh",acnno:1000,password:"abc123",balance:0},
 
 }
-constructor(private router:Router){}
+constructor(private router:Router,private ds:DataService){}
 
 
 login(){
   // alert('login worked')
   var acnum=this.accno
   var psw=this.psw
-  var userData=this.userData
+  var userData=this.ds.userData
   if(acnum in userData){
     if(psw==userData[acnum]["password"]){
       alert("login success")
