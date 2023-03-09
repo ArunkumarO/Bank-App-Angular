@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
+  //currentuser to store  user name 
+     currentUser:any
   userData:any={
     1000:{username:"arun",acnno:1000,password:"abc123",balance:0},
     1001:{username:"amal",acnno:1001,password:"abc123",balance:0},
@@ -22,8 +24,27 @@ export class DataService {
       
       return true
     }
+    
   }
-  
-  constructor() { }
+  login(act:any,ps1:any){
+    var userData=this.userData
+    if(act in userData){
+      if(ps1==userData[act]["password"]){
+        this.currentUser=userData[act]["username"]
+
+        return  true
+      }
+      else{
+        return false
+      }
+    }
+
+      else{
+        return false
+      }
+
+    }
+ 
+  constructor() {}
 }
 

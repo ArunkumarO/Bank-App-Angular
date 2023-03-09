@@ -30,23 +30,15 @@ login(){
   // alert('login worked')
   var acnum=this.accno
   var psw=this.psw
-  var userData=this.ds.userData
-  if(acnum in userData){
-    if(psw==userData[acnum]["password"]){
-      alert("login success")
-      //redirection
-    
-    this.router.navigateByUrl("dashboard")
-    }
-    else{
-      alert('incorrect password')
-    }
+const result=this.ds.login(acnum,psw)
+if(result){
+  alert("login success")
+  this.router.navigateByUrl("dashboard")
 
-  }
-  else{
-    alert('inncorect accnum')
-  }
-
+}
+else{
+  alert("incorrect acno or password")
+}
 }
 }
 
