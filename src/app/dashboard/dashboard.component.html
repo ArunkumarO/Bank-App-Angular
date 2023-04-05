@@ -1,22 +1,33 @@
-<h1 class="top">WELCOME <h1>{{username}}</h1></h1>
-<div class="row">
- 
+<div>
+    <h5>{{sDetails}}</h5>
+</div>
+<h1 class="top">WELCOME <h1>{{usr}}</h1></h1>
+<div [ngClass]="act?'s1':''"  style="background-color: rgba(64,89,112,0.385); border-radius: 10px;"   class="mt-5 p-2 container w-50 text-center"
+>
+<a href="/transaction">View Transaction History</a>
+</div>
+<div class="text-start">
+    <button (click)="deleteAcc()" class="mt-2 btn btn-danger">Delete</button>
+
+</div>
+<app-delet (onDelete)="ondeleteAcc($event)" (onCancel)="cancelchild()" [item]="act"></app-delet>
+<div [ngClass]="act?'s1':''"  class="row">
     <div class="col-lg-6 col-md-6 col-sm-12"><div class="register">
         
         <form class="container  w-50 mt-5 mb-5"  action="">
 
             <div class="mt-5  p-4">
-                <input   id="act" name="accnt" type="text"placeholder="accnum" class="form-control">
+                <input [(ngModel)]="act"  id="actdep" name="accnt" type="text"placeholder="accnum" class="form-control">
             </div>
             <div class=" p-4 ">
-                <input   id="usr" name="user" type="text" placeholder="username" class="form-control">
+                <input [(ngModel)]="ps1"  id="pswdep" name="password" type="password" placeholder="password" class="form-control">
             </div>
             <div class="mt-2  p-4">
-                <input   id="ps1" name="password" type="password"placeholder="password" class="form-control">
+                <input [(ngModel)]="amnt"  id="amndep" name="amt" type="text"placeholder="ammount" class="form-control">
             </div>
     
             <div class="text-center">
-                <button class="container w-25 mb-3  btn btn-outline-success ">DEPOSIT</button>
+                <button (click)="deposit()" class="container w-25 mb-3  btn btn-outline-success ">DEPOSIT</button>
             </div>
         </form>
     
@@ -25,17 +36,17 @@
     <div class="col-lg-6 col-md-6 col-sm-12"><div class="register">
         <form class="container  w-50 mt-5 mb-5"  action="">
             <div class="mt-5  p-4">
-                <input   id="act" name="accnt" type="text"placeholder="accnum" class="form-control">
+                <input [(ngModel)]="act1"  id="acno1" name="accnt" type="text"placeholder="accnum" class="form-control">
             </div>
             <div class=" p-4 ">
-                <input   id="usr" name="user" type="text" placeholder="username" class="form-control">
+                <input [(ngModel)]="ps11"  id="psw1" name="password" type="password" placeholder="password" class="form-control">
             </div>
             <div class="mt-2  p-4">
-                <input   id="ps1" name="password" type="password"placeholder="password" class="form-control">
+                <input   [(ngModel)]="amnt"  id="amnt2" name="amount" type="text"placeholder="amount" class="form-control">
             </div>
     
             <div class="text-center">
-                <button class="container w-25 mb-3  btn btn-outline-success ">WIDRAW</button>
+                <button (click)="withdraw()" class="container w-25 mb-3  btn btn-outline-success ">WIDRAW</button>
             </div>
        
         </form>

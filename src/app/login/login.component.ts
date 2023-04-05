@@ -9,36 +9,40 @@ import { DataService } from '../services/data.service';
 })
 export class LoginComponent {
 //accno=""
-accno:any
-psw:any
+act:any
+ps1:any
   
     // string interpolation
   data="Your Perfect Banking Partner"
     // property binding[property_name]="data1"
   data1="Enter Your Acc Number"
-userData:any={
-  1000:{username:"arun",acnno:1000,password:"abc123",balance:0},
-  1001:{username:"amal",acnno:1001,password:"abc123",balance:0},
-  1003:{username:"aswin",acnno:1002,password:"abc123",balance:0},
-  1004:{username:"adarsh",acnno:1000,password:"abc123",balance:0},
 
-}
 constructor(private router:Router,private ds:DataService){}
 
 
 login(){
   // alert('login worked')
-  var acnum=this.accno
-  var psw=this.psw
-const result=this.ds.login(acnum,psw)
-if(result){
-  alert("login success")
+  var act=this.act
+  var ps1=this.ps1
+this.ds.login(act,ps1).subscribe((result:any)=>{
+
+  localStorage.setItem("currentUser",result.currentUser)
+  localStorage.setItem("currentAcno",JSON.stringify(result.currentAcno))
+  localStorage.setItem("token", JSON.stringify(result.token))
+
+  alert(result.message)
+  console.log(result);
+  
   this.router.navigateByUrl("dashboard")
+},
+result=>{
+  alert(result.error.message)
+
+})
+
 
 }
-else{
-  alert("incorrect acno or password")
 }
-}
-}
+
+
 

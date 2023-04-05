@@ -4,15 +4,15 @@
 <h1 class="text-center text-white">Register In</h1>
 
 <div class="register">
-    <form class="container  w-50 mt-5 mb-5"  action="">
+    <form [formGroup]="registerForm" class="container  w-50 mt-5 mb-5"  action="">
         <div class="mt-5  p-4">
-            <input [(ngModel)]="acno"  id="act" name="accnt" type="text"placeholder="accnum" class="form-control">
+            <input formControlName="act"   id="act" name="accnt" type="text"placeholder="accnum" class="form-control">
         </div>
         <div class=" p-4 ">
-            <input [(ngModel)]="uname"  id="usr" name="user" type="text" placeholder="username" class="form-control">
+            <input  formControlName="usr" id="usr" name="user" type="text" placeholder="username" class="form-control">
         </div>
         <div class="mt-2  p-4">
-            <input [(ngModel)]="psw"   id="ps1" name="password" type="password"placeholder="password" class="form-control">
+            <input  formControlName="ps1"  id="ps1" name="password" type="password"placeholder="password" class="form-control">
         </div>
 
         <div class="text-center">

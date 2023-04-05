@@ -103,3 +103,101 @@ Data Binding In Angular
 
     --creating service file --
       -----> ng g s filename
+
+      Angular directives
+
+      1.component directive
+
+
+2.Structual dierectives
+    - *ngFor
+    - *ngIf
+
+3.Atribute dierectives
+    - [ngClass]
+
+Form Validation in angular
+-------------------------
+    Form creation in angular
+        
+        1.template driven form
+        2.model driven form
+
+     Model Driven form
+     -----------------
+
+     -reactive form
+        -ReactiveFormsModule  - module used to build model form 
+        -FormBuilder          - class used to create model form 
+
+        -a model contain   -form group
+                           -array
+                           -controller
+
+Local Storage in angular
+-----------------------
+
+C - localStorage.setItem()
+R - localStorage.getItem()
+U - localStorage.setItem()
+D - localStorage.removeItem()
+
+
+Child Parent Communication In angular
+-------------------------------------
+
+      parent - child data sharing
+      ---------------------------
+        @Input()  -   decorator used to share data from parent to child
+
+      child - parent data sharing
+      ---------------------------
+          
+
+
+Date and time in angular
+------------------------
+
+Date - class used to access current data in angular
+
+Angular Pipes
+-------------
+
+used to convert data to another format
+
+Event Creation in Angular (user defined events)
+-------------------------
+   EventEmitter - class used to create events
+   
+   emit()  -method used to specify when the event happens
+
+
+
+
+
+
+
+      API CREATION IN ANGULAR
+      -------------
+    HttpClientModule -module
+    HttpClient -class
+
+    methods
+    get post put patch delete
+
+    asynchronus js 
+    and ts
+
+    in js promise
+        then()
+        catch()
+
+      in ts  rxjs (reactive exteion for js)
+      observable -subscribe()
+                 -catch()   
+                 -----------
+
+
+  Header creation in angular    
+  ---------------------
+  HttpHeaders- class used to generate Headers           
